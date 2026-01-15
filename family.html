@@ -131,6 +131,46 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
+        /* Story Navigation */
+        .story-nav {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .story-btn {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .story-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .story-btn.active {
+            background: rgba(255, 255, 255, 0.4);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .story-info {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
         /* Main Container */
         .container {
             max-width: 900px;
@@ -404,11 +444,18 @@
     <!-- Practice Button -->
     <button class="practice-btn" onclick="togglePractice()">📝 Thực Hành</button>
 
+    <!-- Story Navigation -->
+    <div class="story-nav">
+        <button class="story-btn active" onclick="loadStory(1)" id="story1Btn">📖 Story 1</button>
+        <button class="story-btn" onclick="loadStory(2)" id="story2Btn">📚 Story 2</button>
+    </div>
+
     <!-- Main Container -->
     <div class="container">
         <!-- Normal Mode -->
         <div id="normalMode">
             <h1 class="section-title" id="sectionTitle">👨‍👩‍👧‍👦 Gia Đình</h1>
+            <p class="story-info" id="storyInfo">Story 1: A Family Day at Home</p>
             <p class="progress" id="progress">Câu 1 / 40</p>
 
             <div class="sentence-card">
@@ -446,395 +493,47 @@
     </div>
 
     <script>
-        const conversations = [
-            {
-                section: "MORNING BREAKFAST - BUỔI SÁNG ĂN Sáng",
-                chunks: [
-                    { en: "Mom:", vn: "Mẹ:", pron: "Mom:" },
-                    { en: "Good morning", vn: "Chào buổi sáng", pron: "Gớt-mo-ning" },
-                    { en: ",", vn: ",", pron: "," },
-                    { en: "everyone", vn: "các bạn", pron: "e-vi-one" },
-                    { en: "!", vn: "!", pron: "" },
-                    { en: "How", vn: "Các bạn", pron: "Hau" },
-                    { en: "did you sleep", vn: "ngủ thế nào", pron: "địt-đ diu s-líp" },
-                    { en: "?", vn: "?", pron: "?" }
-                ]
-            },
-            {
-                section: "MORNING BREAKFAST - BUỔI SÁNG ĂN Sáng",
-                chunks: [
-                    { en: "Dad:", vn: "Bố:", pron: "Đạt-đ:" },
-                    { en: "I slept", vn: "Tôi ngủ", pron: "Ai sờ-lạp" },
-                    { en: "very well", vn: "rất tốt", pron: "ve-ruy wao" },
-                    { en: ",", vn: ",", pron: "," },
-                    { en: "thank you", vn: "cảm ơn", pron: "thanh diu" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "What's for", vn: "Sáng ăn", pron: "Wats-s fo" },
-                    { en: "breakfast", vn: "gì", pron: "boạt-fết" },
-                    { en: "?", vn: "?", pron: "?" }
-                ]
-            },
-            {
-                section: "MORNING BREAKFAST - BUỔI SÁNG ĂN Sáng",
-                chunks: [
-                    { en: "Mom:", vn: "Mẹ:", pron: "Mom:" },
-                    { en: "I made", vn: "Tôi làm", pron: "Ai mệt-đ" },
-                    { en: "eggs", vn: "trứng", pron: "ệch-s" },
-                    { en: ",", vn: ",", pron: "," },
-                    { en: "toast", vn: "bánh mì nướng", pron: "tâu-st" },
-                    { en: ",", vn: ",", pron: "," },
-                    { en: "and", vn: "và", pron: "en" },
-                    { en: "fresh juice", vn: "nước tươi", pron: "foẹt-sh jiu-c" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "Come and sit down", vn: "Các bạn ghế xuống", pron: "Com en sịt đao" },
-                    { en: ".", vn: ".", pron: "." }
-                ]
-            },
-            {
-                section: "MORNING BREAKFAST - BUỔI SÁNG ĂN Sáng",
-                chunks: [
-                    { en: "Son:", vn: "Con trai:", pron: "Son:" },
-                    { en: "Yummy", vn: "Ngon quá", pron: "Yem-my" },
-                    { en: "!", vn: "!", pron: "." },
-                    { en: "I love", vn: "Tôi yêu thích", pron: "Ai lớp" },
-                    { en: "your breakfast", vn: "bữa sáng của mẹ", pron: "diu boạt-fết" },
-                    { en: ",", vn: ",", pron: "," },
-                    { en: "Mom", vn: "Mom", pron: "Mom" },
-                    { en: ".", vn: ".", pron: "." }
-                ]
-            },
-            {
-                section: "MORNING BREAKFAST - BUỔI SÁNG ĂN Sáng",
-                chunks: [
-                    { en: "Daughter:", vn: "Con gái:", pron: "Đoa-thờ:" },
-                    { en: "Can I have", vn: "Con có thể có", pron: "Cen ai ha-vờ" },
-                    { en: "some milk", vn: "một chút sữa", pron: "som-m miêu-k" },
-                    { en: "with", vn: "với", pron: "wịt-th" },
-                    { en: "my bread", vn: "bánh", pron: "mai boát-đ" },
-                    { en: "?", vn: "không?", pron: "" }
-                ]
-            },
-            {
-                section: "MORNING BREAKFAST - BUỔI SÁNG ĂN Sáng",
-                chunks: [
-                    { en: "Mom:", vn: "Mẹ:", pron: "Mom:" },
-                    { en: "Of course", vn: "Tất nhiên rồi", pron: "ợp cột-si" },
-                    { en: ",", vn: ",", pron: "," },
-                    { en: "sweetheart", vn: "con yêu", pron: "s-wịt-tho-t" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "Here you are", vn: "Đây nè", pron: "Hia diu ó-ờ" },
-                    { en: ".", vn: ".", pron: "." }
-                ]
-            },
-            {
-                section: "LUNCH TIME - GIỜ ĂN TRƯA",
-                chunks: [
-                    { en: "Dad:", vn: "Bố:", pron: "Đạt-đ:" },
-                    { en: "What time is", vn: "Hôm nay ăn", pron: "wát tham it-s" },
-                    { en: "lunch", vn: "trưa", pron: "lơn-ch" },
-                    { en: "today", vn: "mấy giờ", pron: "tu-đây" },
-                    { en: "?", vn: "?", pron: "?" }
-                ]
-            },
-            {
-                section: "LUNCH TIME - GIỜ ĂN TRƯA",
-                chunks: [
-                    { en: "Mom:", vn: "Mẹ:", pron: "Mon:" },
-                    { en: "At 12 o'clock", vn: "Lúc 12 giờ", pron: "ạt thao-vồ o c-lóc" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "I'm cooking", vn: "Mẹ đang nấu", pron: "Ai-am cóc-king" },
-                    { en: "chicken", vn: "gà", pron: "chích-kờn" },
-                    { en: "and", vn: "và", pron: "en" },
-                    { en: "rice", vn: "cơm", pron: "roai-c" },
-                    { en: ".", vn: ".", pron: "." }
-                ]
-            },
-            {
-                section: "LUNCH TIME - GIỜ ĂN TRƯA",
-                chunks: [
-                    { en: "Son:", vn: "Con trai:", pron: "Son:" },
-                    { en: "Great", vn: "Tuyệt vời", pron: "g-roểt-t" },
-                    { en: "!", vn: "!", pron: "" },
-                    { en: "Can my friend", vn: "Bạn con có thể", pron: "Cen mai fen-đ" },
-                    { en: "come over", vn: "qua chơi", pron: "com o-vờ" },
-                    { en: "today", vn: "hôm nay", pron: "tu-đây" },
-                    { en: "?", vn: "không?", pron: "?" }
-                ]
-            },
-            {
-                section: "LUNCH TIME - GIỜ ĂN TRƯA",
-                chunks: [
-                    { en: "Dad:", vn: "Bố:", pron: "Đạt-đ:" },
-                    { en: "Sure", vn: "Được thôi", pron: "Sôi" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "What is", vn: "Bạn của con tên", pron: "wát is" },
-                    { en: "your friend's name", vn: "gì", pron: "diu-o fen-đ-s nêm" },
-                    { en: "?", vn: "?", pron: "?." }
-                ]
-            },
-            {
-                section: "LUNCH TIME - GIỜ ĂN TRƯA",
-                chunks: [
-                    { en: "Son:", vn: "Con trai:", pron: "Son:" },
-                    { en: "His name is", vn: "Tên bạn ấy là", pron: "Hi-s nêm is" },
-                    { en: "Tom", vn: "Tom", pron: "tom" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "He lives", vn: "Nó sống", pron: "Hi lệpv-s" },
-                    { en: "next door", vn: "bên cạnh", pron: "nệch-t đo-o" },
-                    { en: ".", vn: ".", pron: "." }
-                ]
-            },
-            {
-                section: "LUNCH TIME - GIỜ ĂN TRƯA",
-                chunks: [
-                    { en: "Mom:", vn: "Mẹ:", pron: "Mom:" },
-                    { en: "That's nice", vn: "Thật tốt", pron: "thát-s nai-c" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "Tell him", vn: "Bảo bạn ấy", pron: "theo hem" },
-                    { en: "we have", vn: "chúng ta có", pron: "wi ha-vờ" },
-                    { en: "food", vn: "thức ăn", pron: "fút" },
-                    { en: "for him", vn: "cho nó", pron: "fo hem" },
-                    { en: "too", vn: "luôn", pron: "tu" },
-                    { en: ".", vn: ".", pron: "." }
-                ]
-            },
-            {
-                section: "LUNCH TIME - GIỜ ĂN TRƯA",
-                chunks: [
-                    { en: "Daughter:", vn: "Con gái:", pron: "Đoa-thờ:" },
-                    { en: "Mom", vn: "Mẹ", pron: "mon" },
-                    { en: ",", vn: ",", pron: "," },
-                    { en: "can I help you", vn: "con có thể giúp mẹ", pron: "cen ai hep-p diu" },
-                    { en: "cook", vn: "nấu", pron: "cấc-k" },
-                    { en: "?", vn: "không?", pron: "?" }
-                ]
-            },
-            {
-                section: "LUNCH TIME - GIỜ ĂN TRƯA",
-                chunks: [
-                    { en: "Mom:", vn: "Mẹ:", pron: "Mon:" },
-                    { en: "Yes", vn: "Có", pron: "Yes" },
-                    { en: ",", vn: ",", pron: "." },
-                    { en: "you can", vn: "con có thể", pron: "diu cen" },
-                    { en: "wash", vn: "rửa", pron: "wua-sh" },
-                    { en: "the vegetables", vn: "rau", pron: "thơ vét-tờ-bồ" },
-                    { en: "for me", vn: "cho mẹ", pron: "fo mi" },
-                    { en: ".", vn: ".", pron: "." }
-                ]
-            },
-            {
-                section: "AFTERNOON - CHIỀU",
-                chunks: [
-                    { en: "Dad:", vn: "Bố:", pron: "Đạt-đ:" },
-                    { en: "I'm tired", vn: "Tôi mệt", pron: "Am thai-ơ-đ" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "I need to", vn: "Tôi cần", pron: "Ai nit-đ tu" },
-                    { en: "rest", vn: "nghỉ ngơi", pron: "roạt-t" },
-                    { en: ".", vn: ".", pron: "." }
-                ]
-            },
-            {
-                section: "AFTERNOON - CHIỀU",
-                chunks: [
-                    { en: "Son:", vn: "Con trai:", pron: "Son:" },
-                    { en: "Dad", vn: "Bố", pron: "Đạt-đ" },
-                    { en: ",", vn: ",", pron: "," },
-                    { en: "can we play", vn: "chúng ta có thể chơi", pron: "cen wi p-lây" },
-                    { en: "football", vn: "bóng đá", pron: "fút-bôn" },
-                    { en: "after you rest", vn: "sau khi bố nghỉ", pron: "áp-tồ diu roạt-t" },
-                    { en: "?", vn: "không?", pron: "?" }
-                ]
-            },
-            {
-                section: "AFTERNOON - CHIỀU",
-                chunks: [
-                    { en: "Dad:", vn: "Bố:", pron: "Đạt-đ:" },
-                    { en: "Sure", vn: "Được thôi", pron: "Sôi" },
-                    { en: "!", vn: "!", pron: "." },
-                    { en: "That sounds fun", vn: "Nghe hay đó", pron: "thát som-s fon" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "Maybe in", vn: "Có thể trong", pron: "Mi-bì in" },
-                    { en: "one hour", vn: "một giờ", pron: "one au-ơ" },
-                    { en: ".", vn: ".", pron: "." }
-                ]
-            },
-            {
-                section: "AFTERNOON - CHIỀU",
-                chunks: [
-                    { en: "Daughter:", vn: "Con gái:", pron: "Đoa-thờ:" },
-                    { en: "I want to", vn: "Con muốn", pron: "Ai wân-t tu" },
-                    { en: "read a book", vn: "đọc sách", pron: "ruy-đ ơ bợp-k" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "Can you sit", vn: "Bố ngồi", pron: "Cen diu sệt" },
-                    { en: "with me", vn: "với con", pron: "wịt-th mi" },
-                    { en: "?", vn: "được không?", pron: "?" }
-                ]
-            },
-            {
-                section: "AFTERNOON - CHIỀU",
-                chunks: [
-                    { en: "Dad:", vn: "Bố:", pron: "Đạt-đ:" },
-                    { en: "Of course", vn: "Tất nhiên rồi", pron: "ợp cột-si" },
-                    { en: ",", vn: ",", pron: "," },
-                    { en: "my dear", vn: "con yêu", pron: "mai đia-ơ" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "Get your book", vn: "Lấy sách của con ra", pron: "Gẹt diu-o bợp-k" },
-                    { en: ".", vn: ".", pron: "" }
-                ]
-            },
-            {
-                section: "EVENING - TỐI",
-                chunks: [
-                    { en: "Mom:", vn: "Mẹ:", pron: "Mom:" },
-                    { en: "Come", vn: "Đi", pron: "com" },
-                    { en: ",", vn: ",", pron: "" },
-                    { en: "everyone", vn: "các bạn", pron: "e-vi-one" },
-                    { en: "!", vn: "!", pron: "!" },
-                    { en: "Dinner is ready", vn: "Bữa tối đã sẵn sàng", pron: "Đin-ơ is roe-đy" },
-                    { en: ".", vn: ".", pron: "" }
-                ]
-            },
-            {
-                section: "EVENING - TỐI",
-                chunks: [
-                    { en: "Family:", vn: "Gia đình:", pron: "Fem-lỳ:" },
-                    { en: "We're coming", vn: "Chúng con đi ngay", pron: "Wi-o com-ing" },
-                    { en: "!", vn: "!", pron: "!" },
-                    { en: "That smells delicious", vn: "Mùi thơm ngon quá", pron: "thát sờ-mau-s Đờ-lếp-sệt" },
-                    { en: "!", vn: "!", pron: "!" }
-                ]
-            },
-            {
-                section: "EVENING - TỐI",
-                chunks: [
-                    { en: "Son:", vn: "Con trai:", pron: "Son:" },
-                    { en: "This soup is", vn: "Canh này", pron: "thịt-s sụ-p is" },
-                    { en: "hot", vn: "nóng quá", pron: "hot" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "Can I have", vn: "Con có thể có", pron: "Cen ai ha-vờ" },
-                    { en: "some water", vn: "nước", pron: "sơm wa-tờ" },
-                    { en: "?", vn: "không?", pron: "?" }
-                ]
-            },
-            {
-                section: "EVENING - TỐI",
-                chunks: [
-                    { en: "Dad:", vn: "Bố:", pron: "Đạt-đ:" },
-                    { en: "Here's your water", vn: "Đây nước cho con", pron: "Hia-s diu-o wa-tờ" },
-                    { en: ",", vn: ",", pron: "," },
-                    { en: "son", vn: "", pron: "son" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "Be careful", vn: "Cẩn thận nhé", pron: "Bi ce-fô" },
-                    { en: ".", vn: ".", pron: "." }
-                ]
-            },
-            {
-                section: "EVENING - TỐI",
-                chunks: [
-                    { en: "Daughter:", vn: "Con gái:", pron: "Đoa-thờ:" },
-                    { en: "Mom", vn: "Mẹ", pron: "Mom" },
-                    { en: ",", vn: ",", pron: "," },
-                    { en: "this chicken is", vn: "gà này", pron: "thịt-s chích-kờn is" },
-                    { en: "tasty", vn: "ngon", pron: "tís-ty" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "Thank you", vn: "Cảm ơn mẹ", pron: "Thanh diu" },
-                    { en: "!", vn: "!", pron: "!" }
-                ]
-            },
-            {
-                section: "EVENING - TỐI",
-                chunks: [
-                    { en: "Mom:", vn: "Mẹ:", pron: "Mom:" },
-                    { en: "I'm happy", vn: "Mẹ vui", pron: "Am hap-py" },
-                    { en: "you like it", vn: "khi con thích", pron: "diu lai-k-ịt" },
-                    { en: ",", vn: ",", pron: "" },
-                    { en: "dear", vn: "", pron: "đia-ơ" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "Eat more", vn: "Ăn thêm đi", pron: "ít-t mô-ơ" },
-                    { en: "!", vn: "!", pron: "!" }
-                ]
-            },
-            {
-                section: "BEFORE BEDTIME - TRƯỚC KHI ĐI NGỦ",
-                chunks: [
-                    { en: "Dad:", vn: "Bố:", pron: "Đạt-đ:" },
-                    { en: "It's time to", vn: "Đã đến giờ", pron: "Ịt-s tham tu" },
-                    { en: "go to bed", vn: "đi ngủ", pron: "gâu tu bạt-đ" },
-                    { en: "now", vn: "rồi", pron: "nao" },
-                    { en: ".", vn: ".", pron: "." }
-                ]
-            },
-            {
-                section: "BEFORE BEDTIME - TRƯỚC KHI ĐI NGỦ",
-                chunks: [
-                    { en: "Son:", vn: "Con trai:", pron: "Son:" },
-                    { en: "Can we tell", vn: "Tối nay chúng ta có thể kể", pron: "Can wi theo" },
-                    { en: "stories", vn: "chuyện", pron: "sờ-to-ìs" },
-                    { en: "tonight", vn: "không", pron: "tờ-nai-t" },
-                    { en: "?", vn: "?", pron: "" }
-                ]
-            },
-            {
-                section: "BEFORE BEDTIME - TRƯỚC KHI ĐI NGỦ",
-                chunks: [
-                    { en: "Mom:", vn: "Mẹ:", pron: "Mon:" },
-                    { en: "Yes", vn: "Có", pron: "Yes" },
-                    { en: ",", vn: ",", pron: "," },
-                    { en: "but just", vn: "nhưng chỉ", pron: "bợt jạt-t" },
-                    { en: "one story", vn: "một câu chuyện", pron: "one sờ-to-ry" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "Then everyone sleeps", vn: "Rồi mọi người đi ngủ", pron: "" },
-                    { en: ".", vn: ".", pron: "." }
-                ]
-            },
-            {
-                section: "BEFORE BEDTIME - TRƯỚC KHI ĐI NGỦ",
-                chunks: [
-                    { en: "Daughter:", vn: "Con gái:", pron: "Đoa-thờ:" },
-                    { en: "I love you", vn: "Con yêu mẹ", pron: "Ai lớp diu" },
-                    { en: ",", vn: ",", pron: "," },
-                    { en: "Mom", vn: "Mom", pron: "Mom" },
-                    { en: ".", vn: ".", pron: "." },
-                    { en: "I love you", vn: "Con yêu bố", pron: "Ai lớp diu" },
-                    { en: ",", vn: ",", pron: "," },
-                    { en: "Dad", vn: "đạt-đ", pron: "đạt-đ" },
-                    { en: ".", vn: ".", pron: "." }
-                ]
-            },
-            {
-                section: "BEFORE BEDTIME - TRƯỚC KHI ĐI NGỦ",
-                chunks: [
-                    { en: "Dad and Mom:", vn: "Bố và Mẹ:", pron: "Đạt-đ en Mon:" },
-                    { en: "We love you", vn: "Bố mẹ cũng yêu con", pron: "Wi lớp diu" },
-                    { en: "too", vn: ",", pron: "tu" },
-                    { en: ",", vn: ",", pron: "," },
-                    { en: "sweetie", vn: "con yêu", pron: "sờ-wi-tì" },
-                    { en: ".", vn: ".", pron: "." }
-                ]
-            },
-            {
-                section: "BEFORE BEDTIME - TRƯỚC KHI ĐI NGỦ",
-                chunks: [
-                    { en: "Son:", vn: "Con trai:", pron: "Son:" },
-                    { en: "Good night", vn: "Chúc các bạn ngủ ngon", pron: "gợt nai" },
-                    { en: ",", vn: ",", pron: "," },
-                    { en: "everyone", vn: "", pron: "e-vi-one" },
-                    { en: "!", vn: "!", pron: "!" }
-                ]
-            },
-            {
-                section: "BEFORE BEDTIME - TRƯỚC KHI ĐI NGỦ",
-                chunks: [
-                    { en: "Everyone:", vn: "Mọi người:", pron: "E-vi-one:" },
-                    { en: "Good night", vn: "Chúc bạn ngủ ngon", pron: "Gợt nai" },
-                    { en: "!", vn: "!", pron: "!" },
-                    { en: "Sleep well", vn: "Ngủ tốt", pron: "S-líp wao" },
-                    { en: "!", vn: "!", pron: "!" }
-                ]
-            }
-        ];
-
+        let allStories = [];
+        let currentStoryIndex = 1;
+        let conversations = [];
         let currentIndex = 0;
+
+        // Load story data from JSON file
+        async function loadStoryData(storyNum) {
+            try {
+                const response = await fetch(`family/story${storyNum}.json`);
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error loading story:', error);
+                return null;
+            }
+        }
+
+        // Load and switch to a specific story
+        async function loadStory(storyNum) {
+            const data = await loadStoryData(storyNum);
+            if (data) {
+                conversations = data.conversations;
+                currentStoryIndex = storyNum;
+                currentIndex = 0;
+                
+                // Update story info
+                document.getElementById('storyInfo').textContent = `Story ${storyNum}: ${data.title}`;
+                
+                // Update button states
+                document.querySelectorAll('.story-btn').forEach((btn, idx) => {
+                    btn.classList.toggle('active', idx + 1 === storyNum);
+                });
+                
+                renderSentence();
+            }
+        }
+
+        // Initialize - load first story
+        async function initialize() {
+            await loadStory(1);
+        }
 
         // Color palette for word matching
         const colors = [
@@ -928,7 +627,7 @@
         }
 
         // Initialize
-        renderSentence();
+        initialize();
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
