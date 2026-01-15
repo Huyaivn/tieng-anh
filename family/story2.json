@@ -1,0 +1,281 @@
+{
+  "title": "Family Weekend Fun",
+  "titleVn": "Cuối Tuần Vui Vẻ Của Gia Đình",
+  "conversations": [
+    {
+      "section": "SATURDAY MORNING - SÁNG THỨ BẢY",
+      "chunks": [
+        { "en": "Dad:", "vn": "Bố:", "pron": "Đạt-đ:" },
+        { "en": "Wake up", "vn": "Dậy đi", "pron": "Wếch-k ớp" },
+        { "en": ",", "vn": ",", "pron": "," },
+        { "en": "everyone", "vn": "mọi người", "pron": "e-vi-one" },
+        { "en": "!", "vn": "!", "pron": "!" },
+        { "en": "It's Saturday", "vn": "Hôm nay thứ Bảy", "pron": "Ịt-s Sát-tơ-đây" },
+        { "en": "!", "vn": "!", "pron": "!" }
+      ]
+    },
+    {
+      "section": "SATURDAY MORNING - SÁNG THỨ BẢY",
+      "chunks": [
+        { "en": "Son:", "vn": "Con trai:", "pron": "Son:" },
+        { "en": "Hooray", "vn": "Ura", "pron": "Hu-rây" },
+        { "en": "!", "vn": "!", "pron": "!" },
+        { "en": "No school", "vn": "Không có trường", "pron": "Nâu s-cun" },
+        { "en": "today", "vn": "hôm nay", "pron": "tu-đây" },
+        { "en": "!", "vn": "!", "pron": "!" }
+      ]
+    },
+    {
+      "section": "SATURDAY MORNING - SÁNG THỨ BẢY",
+      "chunks": [
+        { "en": "Daughter:", "vn": "Con gái:", "pron": "Đoa-thờ:" },
+        { "en": "What are we doing", "vn": "Chúng ta sẽ làm gì", "pron": "Wát ó wi du-ing" },
+        { "en": "today", "vn": "hôm nay", "pron": "tu-đây" },
+        { "en": "?", "vn": "?", "pron": "?" }
+      ]
+    },
+    {
+      "section": "SATURDAY MORNING - SÁNG THỨ BẢY",
+      "chunks": [
+        { "en": "Mom:", "vn": "Mẹ:", "pron": "Mom:" },
+        { "en": "We're going to", "vn": "Chúng ta sẽ đi", "pron": "Wi-ơ gâu-ing tu" },
+        { "en": "the park", "vn": "công viên", "pron": "thơ pác-k" },
+        { "en": "!", "vn": "!", "pron": "!" }
+      ]
+    },
+    {
+      "section": "SATURDAY MORNING - SÁNG THỨ BẢY",
+      "chunks": [
+        { "en": "Son:", "vn": "Con trai:", "pron": "Son:" },
+        { "en": "Can I bring", "vn": "Con có thể mang", "pron": "Cen ai b-ring" },
+        { "en": "my ball", "vn": "quả bóng của con", "pron": "mai bôn" },
+        { "en": "?", "vn": "không?", "pron": "?" }
+      ]
+    },
+    {
+      "section": "SATURDAY MORNING - SÁNG THỨ BẢY",
+      "chunks": [
+        { "en": "Dad:", "vn": "Bố:", "pron": "Đạt-đ:" },
+        { "en": "Of course", "vn": "Tất nhiên", "pron": "Óp cót-s" },
+        { "en": "!", "vn": "!", "pron": "!" },
+        { "en": "Let's pack", "vn": "Hãy chuẩn bị", "pron": "Lẹt-s pắc-k" },
+        { "en": "some snacks", "vn": "đồ ăn nhẹ", "pron": "sơm s-nắch-s" },
+        { "en": "too", "vn": "nữa", "pron": "tu" },
+        { "en": ".", "vn": ".", "pron": "." }
+      ]
+    },
+    {
+      "section": "AT THE PARK - TẠI CÔNG VIÊN",
+      "chunks": [
+        { "en": "Daughter:", "vn": "Con gái:", "pron": "Đoa-thờ:" },
+        { "en": "Look", "vn": "Nhìn kìa", "pron": "Lục-k" },
+        { "en": "!", "vn": "!", "pron": "!" },
+        { "en": "There's a", "vn": "Có một", "pron": "Thé-ơ s ơ" },
+        { "en": "playground", "vn": "sân chơi", "pron": "p-lây-g-rạo-đ" },
+        { "en": "!", "vn": "!", "pron": "!" }
+      ]
+    },
+    {
+      "section": "AT THE PARK - TẠI CÔNG VIÊN",
+      "chunks": [
+        { "en": "Son:", "vn": "Con trai:", "pron": "Son:" },
+        { "en": "Can we play on", "vn": "Chúng con có thể chơi ở", "pron": "Cen wi p-lây on" },
+        { "en": "the swings", "vn": "xích đu", "pron": "thơ s-wing-s" },
+        { "en": "?", "vn": "không?", "pron": "?" }
+      ]
+    },
+    {
+      "section": "AT THE PARK - TẠI CÔNG VIÊN",
+      "chunks": [
+        { "en": "Mom:", "vn": "Mẹ:", "pron": "Mom:" },
+        { "en": "Yes", "vn": "Được", "pron": "Yes" },
+        { "en": ",", "vn": ",", "pron": "," },
+        { "en": "but", "vn": "nhưng", "pron": "bợt" },
+        { "en": "be careful", "vn": "cẩn thận nhé", "pron": "bi ké-fô" },
+        { "en": "!", "vn": "!", "pron": "!" }
+      ]
+    },
+    {
+      "section": "AT THE PARK - TẠI CÔNG VIÊN",
+      "chunks": [
+        { "en": "Dad:", "vn": "Bố:", "pron": "Đạt-đ:" },
+        { "en": "I'll push you", "vn": "Bố sẽ đẩy cho", "pron": "Ai-ồ pút-sh diu" },
+        { "en": "on the swing", "vn": "trên xích đu", "pron": "on thơ s-wing" },
+        { "en": ".", "vn": ".", "pron": "." }
+      ]
+    },
+    {
+      "section": "AT THE PARK - TẠI CÔNG VIÊN",
+      "chunks": [
+        { "en": "Daughter:", "vn": "Con gái:", "pron": "Đoa-thờ:" },
+        { "en": "Higher", "vn": "Cao hơn", "pron": "Hai-ơ" },
+        { "en": ",", "vn": ",", "pron": "," },
+        { "en": "Dad", "vn": "bố", "pron": "Đạt-đ" },
+        { "en": "!", "vn": "!", "pron": "!" },
+        { "en": "Higher", "vn": "Cao hơn nữa", "pron": "Hai-ơ" },
+        { "en": "!", "vn": "!", "pron": "!" }
+      ]
+    },
+    {
+      "section": "PICNIC TIME - GIỜ ĂN PICNIC",
+      "chunks": [
+        { "en": "Mom:", "vn": "Mẹ:", "pron": "Mom:" },
+        { "en": "Come here", "vn": "Đến đây", "pron": "Com hia" },
+        { "en": ",", "vn": ",", "pron": "," },
+        { "en": "kids", "vn": "các con", "pron": "kịt-s" },
+        { "en": "!", "vn": "!", "pron": "!" },
+        { "en": "Time to eat", "vn": "Đến giờ ăn rồi", "pron": "Tham tu ít" },
+        { "en": "!", "vn": "!", "pron": "!" }
+      ]
+    },
+    {
+      "section": "PICNIC TIME - GIỜ ĂN PICNIC",
+      "chunks": [
+        { "en": "Son:", "vn": "Con trai:", "pron": "Son:" },
+        { "en": "I'm hungry", "vn": "Con đói", "pron": "Ai-m hơn-g-ri" },
+        { "en": "!", "vn": "!", "pron": "!" },
+        { "en": "What do we have", "vn": "Chúng ta có gì", "pron": "Wát du wi ha-vờ" },
+        { "en": "?", "vn": "?", "pron": "?" }
+      ]
+    },
+    {
+      "section": "PICNIC TIME - GIỜ ĂN PICNIC",
+      "chunks": [
+        { "en": "Dad:", "vn": "Bố:", "pron": "Đạt-đ:" },
+        { "en": "We have", "vn": "Chúng ta có", "pron": "Wi ha-vờ" },
+        { "en": "sandwiches", "vn": "bánh mì kẹp", "pron": "sán-wịch-s" },
+        { "en": ",", "vn": ",", "pron": "," },
+        { "en": "fruit", "vn": "hoa quả", "pron": "frut" },
+        { "en": ",", "vn": ",", "pron": "," },
+        { "en": "and", "vn": "và", "pron": "en" },
+        { "en": "cookies", "vn": "bánh quy", "pron": "cúc-ki-s" },
+        { "en": "!", "vn": "!", "pron": "!" }
+      ]
+    },
+    {
+      "section": "PICNIC TIME - GIỜ ĂN PICNIC",
+      "chunks": [
+        { "en": "Daughter:", "vn": "Con gái:", "pron": "Đoa-thờ:" },
+        { "en": "Can I have", "vn": "Con có thể ăn", "pron": "Cen ai ha-vờ" },
+        { "en": "the chocolate cookies", "vn": "bánh quy sô-cô-la", "pron": "thơ chóc-lết cúc-ki-s" },
+        { "en": "?", "vn": "không?", "pron": "?" }
+      ]
+    },
+    {
+      "section": "PICNIC TIME - GIỜ ĂN PICNIC",
+      "chunks": [
+        { "en": "Mom:", "vn": "Mẹ:", "pron": "Mom:" },
+        { "en": "After", "vn": "Sau khi", "pron": "Áp-tơ" },
+        { "en": "you eat", "vn": "con ăn", "pron": "diu ít" },
+        { "en": "your sandwich", "vn": "bánh mì kẹp", "pron": "diu-o sán-wịch" },
+        { "en": "first", "vn": "trước", "pron": "fơt-st" },
+        { "en": ".", "vn": ".", "pron": "." }
+      ]
+    },
+    {
+      "section": "AFTERNOON FUN - CHIỀU VUI VẺ",
+      "chunks": [
+        { "en": "Son:", "vn": "Con trai:", "pron": "Son:" },
+        { "en": "Let's play", "vn": "Chúng ta chơi", "pron": "Lẹt-s p-lây" },
+        { "en": "catch", "vn": "bắt bóng", "pron": "cạch" },
+        { "en": ",", "vn": ",", "pron": "," },
+        { "en": "Dad", "vn": "bố", "pron": "Đạt-đ" },
+        { "en": "!", "vn": "!", "pron": "!" }
+      ]
+    },
+    {
+      "section": "AFTERNOON FUN - CHIỀU VUI VẺ",
+      "chunks": [
+        { "en": "Dad:", "vn": "Bố:", "pron": "Đạt-đ:" },
+        { "en": "Good idea", "vn": "Ý hay đó", "pron": "Gút ai-đia" },
+        { "en": "!", "vn": "!", "pron": "!" },
+        { "en": "Throw the ball", "vn": "Ném bóng đi", "pron": "T-râu thơ bôn" },
+        { "en": "!", "vn": "!", "pron": "!" }
+      ]
+    },
+    {
+      "section": "AFTERNOON FUN - CHIỀU VUI VẺ",
+      "chunks": [
+        { "en": "Daughter:", "vn": "Con gái:", "pron": "Đoa-thờ:" },
+        { "en": "Mom", "vn": "Mẹ", "pron": "Mom" },
+        { "en": ",", "vn": ",", "pron": "," },
+        { "en": "can we feed", "vn": "chúng ta có thể cho", "pron": "cen wi fít-đ" },
+        { "en": "the ducks", "vn": "vịt ăn", "pron": "thơ đớch-s" },
+        { "en": "?", "vn": "không?", "pron": "?" }
+      ]
+    },
+    {
+      "section": "AFTERNOON FUN - CHIỀU VUI VẺ",
+      "chunks": [
+        { "en": "Mom:", "vn": "Mẹ:", "pron": "Mom:" },
+        { "en": "Sure", "vn": "Được", "pron": "Sôi" },
+        { "en": "!", "vn": "!", "pron": "!" },
+        { "en": "I brought", "vn": "Mẹ mang theo", "pron": "Ai b-rót" },
+        { "en": "some bread", "vn": "một ít bánh mì", "pron": "sơm b-rạt-đ" },
+        { "en": ".", "vn": ".", "pron": "." }
+      ]
+    },
+    {
+      "section": "AFTERNOON FUN - CHIỀU VUI VẺ",
+      "chunks": [
+        { "en": "Daughter:", "vn": "Con gái:", "pron": "Đoa-thờ:" },
+        { "en": "The ducks", "vn": "Những con vịt", "pron": "Thơ đớch-s" },
+        { "en": "are so cute", "vn": "dễ thương quá", "pron": "ó sâu ciut" },
+        { "en": "!", "vn": "!", "pron": "!" }
+      ]
+    },
+    {
+      "section": "GOING HOME - VỀ NHÀ",
+      "chunks": [
+        { "en": "Dad:", "vn": "Bố:", "pron": "Đạt-đ:" },
+        { "en": "It's getting late", "vn": "Trời sắp tối rồi", "pron": "Ịt-s gẹt-ting lểt" },
+        { "en": ".", "vn": ".", "pron": "." },
+        { "en": "Time to go home", "vn": "Đến giờ về nhà", "pron": "Tham tu gâu hâum" },
+        { "en": ".", "vn": ".", "pron": "." }
+      ]
+    },
+    {
+      "section": "GOING HOME - VỀ NHÀ",
+      "chunks": [
+        { "en": "Son:", "vn": "Con trai:", "pron": "Son:" },
+        { "en": "Can we come back", "vn": "Chúng ta có thể quay lại", "pron": "Cen wi com bạch-k" },
+        { "en": "next week", "vn": "tuần sau", "pron": "nệch-t wík" },
+        { "en": "?", "vn": "không?", "pron": "?" }
+      ]
+    },
+    {
+      "section": "GOING HOME - VỀ NHÀ",
+      "chunks": [
+        { "en": "Mom:", "vn": "Mẹ:", "pron": "Mom:" },
+        { "en": "Yes", "vn": "Được", "pron": "Yes" },
+        { "en": ",", "vn": ",", "pron": "," },
+        { "en": "we will", "vn": "chúng ta sẽ", "pron": "wi wiồ" },
+        { "en": ".", "vn": ".", "pron": "." },
+        { "en": "Did you have fun", "vn": "Các con vui không", "pron": "Địt diu ha-vờ fon" },
+        { "en": "?", "vn": "?", "pron": "?" }
+      ]
+    },
+    {
+      "section": "GOING HOME - VỀ NHÀ",
+      "chunks": [
+        { "en": "Kids:", "vn": "Các con:", "pron": "Kịt-s:" },
+        { "en": "Yes", "vn": "Vâng", "pron": "Yes" },
+        { "en": "!", "vn": "!", "pron": "!" },
+        { "en": "We love", "vn": "Chúng con yêu", "pron": "Wi lớp" },
+        { "en": "family time", "vn": "thời gian gia đình", "pron": "fém-li tham" },
+        { "en": "!", "vn": "!", "pron": "!" }
+      ]
+    },
+    {
+      "section": "GOING HOME - VỀ NHÀ",
+      "chunks": [
+        { "en": "Dad:", "vn": "Bố:", "pron": "Đạt-đ:" },
+        { "en": "We love it", "vn": "Bố mẹ cũng yêu", "pron": "Wi lớp ịt" },
+        { "en": "too", "vn": "nữa", "pron": "tu" },
+        { "en": "!", "vn": "!", "pron": "!" },
+        { "en": "Let's go", "vn": "Đi thôi", "pron": "Lẹt-s gâu" },
+        { "en": "!", "vn": "!", "pron": "!" }
+      ]
+    }
+  ]
+}
